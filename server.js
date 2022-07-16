@@ -16,12 +16,16 @@ app.use(bodyParser.json());
 
 
 /**
- * CORS Policy
+ * Enable CORS Policy
  */
 var cors = require('cors');
-app.use(cors())
-
-
+/**  Accept all CORS */
+//  app.use(cors())
+var corsOptions = {
+   origin: ['http://localhost:3000'],
+   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+ }
+ app.use(cors(corsOptions))
 
 
 
